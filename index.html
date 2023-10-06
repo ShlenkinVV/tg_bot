@@ -106,7 +106,20 @@
         });
 
         order.addEventListener("click", ()=>{
+            let name = document.getElementById("username");
+            let email = document.getElementById("user_email");
+            let phone = document.getElementById("user_phone");
             tg.close()
+
+            //создаем json
+            let data = {
+                name: name,
+                email: email,
+                phone: phone
+
+            };
+
+            tg.sendData(JSON.stringify(data))
         });
     </script>
 </body>
